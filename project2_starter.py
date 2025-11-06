@@ -148,7 +148,7 @@ class Warrior(Player):
         """
         # TODO: Call super().__init__() with warrior-appropriate stats
         # Suggested stats: health=120, strength=15, magic=5
-        super().__init__(name, 120, 15, 5) 
+        super().__init__(name, "Warrior", 120, 15, 5) 
         
     def attack(self, target):
         """
