@@ -185,7 +185,7 @@ class Mage(Player):
         """
         # TODO: Call super().__init__() with mage-appropriate stats
         # Suggested stats: health=80, strength=8, magic=20
-        pass
+        super().__init__(name, "Mage", 80, 8, 20)
         
     def attack(self, target):
         """
@@ -194,7 +194,9 @@ class Mage(Player):
         """
         # TODO: Implement mage attack
         # Should use self.magic for damage calculation instead of strength
-        pass
+        damage = self.magic
+        target.take_damage(damage)
+        print(f"{self.name} casts an attack spell on {target.name} for {damage} damage!") 
         
     def fireball(self, target):
         """
@@ -202,7 +204,9 @@ class Mage(Player):
         """
         # TODO: Implement fireball spell
         # Should do magic-based damage with bonus
-        pass
+        damage = self.magic + 10
+        target.take_damage(damage)
+        print(f"{self.name} casts Fireball on {target.name} for {damage} damage!")
 
 class Rogue(Player):
     """
@@ -217,7 +221,7 @@ class Rogue(Player):
         """
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
-        pass
+        super().__init__(name, "Rogue", 90, 12, 10) 
         
     def attack(self, target):
         """
@@ -227,7 +231,18 @@ class Rogue(Player):
         # TODO: Implement rogue attack
         # Could add a chance for critical hit (double damage)
         # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
-        pass
+        import random
+        is_critical = random.randint(1, 10) <= 3
+        if is_critical:
+            damage = self.strength * 2  
+        else: 
+            damage = self.strength 
+        target.take_damage(damage)
+        if is_critical:
+            print(f"{self.name} lands a CRITICAL HIT on {target.name} for {damage} damage!")
+        else:
+            print(f"{self.name} attacks {target.name} for {damage} damage!")
+
         
     def sneak_attack(self, target):
         """
@@ -235,7 +250,9 @@ class Rogue(Player):
         """
         # TODO: Implement sneak attack
         # Should always do critical damage
-        pass
+        damage = self.strength * 2
+        target.take_damage(damage)
+        print(f"{self.name} performs a Sneak Attack on {target.name} for {damage} damage!")
 
 class Weapon:
     """
