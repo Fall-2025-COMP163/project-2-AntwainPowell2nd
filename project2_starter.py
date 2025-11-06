@@ -63,10 +63,10 @@ class Character:
         """Initialize basic character attributes"""
         # TODO: Set the character's name, health, strength, and magic
         # These should be stored as instance variables
-        self.name = name
-        self.health = health
-        self.strength = strength
-        self.magic = magic
+        self.name = "Unknown"
+        self.health = 0
+        self.strength = 0
+        self.magic = 0
         
     def attack(self, target):
         """
@@ -158,7 +158,7 @@ class Warrior(Player):
         # TODO: Implement warrior attack
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
-        damage = self.strgnth + 5
+        damage = self.strength + 5
         target.take_damage(damage)
         print(f"{self.name} performs a strike on {target.name} for {damage} damage!")
         
