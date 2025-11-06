@@ -63,20 +63,25 @@ class Character:
         """Initialize basic character attributes"""
         # TODO: Set the character's name, health, strength, and magic
         # These should be stored as instance variables
-        pass
+        self.name = name
+        self.health = health
+        self.strength = strength
+        self.magic = magic
         
     def attack(self, target):
         """
-        Basic attack method that all characters can use.
-        This method should:
-        1. Calculate damage based on strength
-        2. Apply damage to the target
-        3. Print what happened
-        """
-        # TODO: Implement basic attack
-        # Damage should be based on self.strength
-        # Use target.take_damage(damage) to apply damage
-        pass
+            Basic attack method that all characters can use.
+            This method should:
+            1. Calculate damage based on strength
+            2. Apply damage to the target
+            3. Print what happened
+            """
+            # TODO: Implement basic attack
+            # Damage should be based on self.strength
+            # Use target.take_damage(damage) to apply damage 
+        damage = self.strength
+        target.take_damage(damage)
+        print(f"{self.name} attacks {target.name} for {damage} damage!")  
         
     def take_damage(self, damage):
         """
@@ -86,7 +91,12 @@ class Character:
         # TODO: Implement taking damage
         # Reduce self.health by damage amount
         # Make sure health doesn't go below 0
-        pass
+        self.health -= damage
+        if self.health < 0:
+            print(f"{self.name} has been defeated!")
+            self.health = 0
+        else:
+            print(f"{self.name} takes {damage} damage, remaining health: {self.health}")
         
     def display_stats(self):
         """
@@ -94,7 +104,7 @@ class Character:
         """
         # TODO: Print character's name, health, strength, and magic
         # Make it look nice with formatting
-        pass
+        print(f"Character: {self.name}\nHealth: {self.health}\nStrength: {self.strength}\nMagic: {self.magic}")
 
 class Player(Character):
     """
