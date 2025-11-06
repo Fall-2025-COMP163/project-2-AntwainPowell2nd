@@ -121,7 +121,7 @@ class Player(Character):
         # TODO: Store the character_class (like "Warrior", "Mage", etc.)
         # TODO: Add any other player-specific attributes (level, experience, etc.)
         super().__init__(name, health, strength, magic)
-        self.charcater_class = character_class
+        self.character_class = character_class 
         self.level = 1
         self.experience = 0
         
@@ -133,7 +133,7 @@ class Player(Character):
         # TODO: Call the parent's display_stats method using super()
         # TODO: Then print additional player info like class and level
         super().display_stats()
-        print(f"Class: {self.charcater_class}\nLevel: {self.level}\nExperience: {self.experience}")
+        print(f"Class: {self.character_class}\nLevel: {self.level}\nExperience: {self.experience}")
 
 class Warrior(Player):
     """
