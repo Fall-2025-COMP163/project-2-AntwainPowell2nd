@@ -145,3 +145,6 @@ Feel free to add your own creative touches for bonus points:
 - Additional character classes beyond the three required
 - More weapon types with different properties
 - Enhanced special abilities with unique effects
+
+##AJ's README.md How to test my code
+- 
