@@ -146,5 +146,5 @@ Feel free to add your own creative touches for bonus points:
 - More weapon types with different properties
 - Enhanced special abilities with unique effects
 
-##AJ's README.md How to test my code
-- 
+##AJ's README.md What My Code Does 
+- This program creates different character types—Warrior, Mage, Rogue—each with unique attacks and stats, then simulates a battle between two of them using a simple turn-based system. It demonstrates inheritance, method overriding, and polymorphism in Python.
